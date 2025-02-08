@@ -13,6 +13,7 @@ eyed3
 ffmpeg-python
 argon2-cffi
 pyotp
+pytz
 python-slugify
 cryptography
 psycopg2-binary
