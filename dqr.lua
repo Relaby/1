@@ -1,13 +1,3 @@
-local SCRIPT_URL = "https://raw.githubusercontent.com/Relaby/1/refs/heads/main/dqr.lua"
-
-local queueTeleport = queue_on_teleport or queueonteleport
-if queueTeleport then
-    game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(state)
-        if state == Enum.TeleportState.Started then
-            queueTeleport(('loadstring(game:HttpGet(%q))()'):format(SCRIPT_URL))
-        end
-    end)
-end
 
 --==================================================
 -- DQ REBORN
@@ -42,8 +32,18 @@ local Remotes = ReplicatedStorage:WaitForChild("remotes")
 local ReloadFunction = Remotes:WaitForChild("reloadInvy")
 local SellEvent = Remotes:WaitForChild("sellItemEvent")
 
-
-
+--==================================================
+-- Execute on Teleport
+--==================================================
+local SCRIPT_URL = "https://raw.githubusercontent.com/Relaby/1/refs/heads/main/dqr.lua"
+do
+    local queueTeleport = queue_on_teleport or queueonteleport
+    if queueTeleport then
+        queueTeleport(([[
+            loadstring(game:HttpGet(%q))()
+        ]]):format(SCRIPT_URL))
+    end
+end
 
 --==================================================
 -- MAP CLEANUP
