@@ -1,4 +1,4 @@
-local SCRIPT_URL = "https://raw.githubusercontent.com/USERNAME/REPOSITORY/BRANCH/script.lua"
+local SCRIPT_URL = "https://raw.githubusercontent.com/Relaby/1/refs/heads/main/dqr.lua"
 
 local queueTeleport = queue_on_teleport or queueonteleport
 if queueTeleport then
